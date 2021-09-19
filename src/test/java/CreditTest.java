@@ -6,10 +6,10 @@ public class CreditTest {
 
     @Test
     public void testGetMonthlyPayment() {
-        int totalSum = 100000;
+        int totalSum = 100_000;
         int percent = 13;
         int months = 12;
-        int expectedMonthlyPayment = 8932;
+        int expectedMonthlyPayment = 1300;
         int monthlyPayment = credit.getMonthlyPayment(totalSum, percent, months);
 
         Assertions.assertEquals(expectedMonthlyPayment, monthlyPayment);
@@ -17,21 +17,21 @@ public class CreditTest {
 
     @Test
     public void testGetRefundableAmount() {
-        int totalSum = 100000;
+        int totalSum = 100_000;
         int percent = 13;
         int months = 12;
-        int expectedRefundableAmount = 107184;
-        int refundableAmount = credit.getRefunableAmount(totalSum, percent, months);
+        int expectedRefundableAmount = 115600;
+        int refundableAmount = credit.getRefundableAmount(totalSum, percent, months);
 
         Assertions.assertEquals(expectedRefundableAmount,refundableAmount);
     }
 
     @Test
     public void testGetOverpayment() {
-        int totalSum = 100000;
+        int totalSum = 100_000;
         int percent = 13;
         int months = 12;
-        int expectedOverPayment = 7184;
+        int expectedOverPayment = 15600;
         int overPayment = credit.getOverpayment(totalSum, percent, months);
 
         Assertions.assertEquals(expectedOverPayment, overPayment);
